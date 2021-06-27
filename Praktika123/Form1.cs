@@ -126,22 +126,31 @@ namespace Praktika123
 
         private void button17_Click(object sender, EventArgs e)
         {
-
+           SolidBrush b = new SolidBrush(button4.BackColor);
+            Graphics.FromImage(pic).FillRectangle(b, 0, 0, pic.Width, pic.Height);
+            Graphics.FromImage(pic1).FillRectangle(b, 0, 0, pic1.Width, pic1.Height);
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-
+           ColorDialog colorDialog1 = new ColorDialog();
+            colorDialog1.AllowFullOpen = false;
+            colorDialog1.ShowHelp = true;
+            colorDialog1.Color = button4.BackColor;
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+                button4.BackColor = colorDialog1.Color;
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-
+            xclick = e.X;
+           yclick = e.Y;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            Button b = (Button)sender;
+            button4.BackColor = b.BackColor;
         }
 
         public Form1()
