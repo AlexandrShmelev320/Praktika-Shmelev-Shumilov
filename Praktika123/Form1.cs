@@ -67,7 +67,7 @@ namespace Praktika123
                 switch (result)
                 {
                     case DialogResult.No: break;
-                    case DialogResult.Yes: СохранитьToolStripMenuItem_Click(sender, e); break;
+                    case DialogResult.Yes: сохранитьToolStripMenuItem_Click(sender, e); break;
                     case DialogResult.Cancel: return;
                 }
             }
