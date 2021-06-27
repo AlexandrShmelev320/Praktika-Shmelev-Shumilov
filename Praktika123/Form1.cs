@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace Praktika123
 {
@@ -74,6 +75,72 @@ namespace Praktika123
             pictureBox1.Image = null;
             pic = new Bitmap(1000, 1000);
             pic1 = new Bitmap(1000, 1000);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            mode = "Овал";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            mode = "Прямоугольник";
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            mode = "Линия";
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            Pen p;
+            p = new Pen(button4.BackColor, trackBar1.Value);
+            Graphics g;
+            g = Graphics.FromImage(pic);
+
+            if (mode == "Прямоугольник")
+            {
+
+                g.DrawRectangle(p, xclick, yclick, e.X - xclick, e.Y - yclick);
+            }
+            if (mode == "Овал")
+            {
+                g.DrawEllipse(p, xclick, yclick, e.X - xclick, e.Y - yclick);
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            mode = "Линия";
+            button4.BackColor = Color.White;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+            pic = new Bitmap(1000, 1000);
+            pic1 = new Bitmap(1000, 1000);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
         }
 
         public Form1()

@@ -54,9 +54,9 @@ namespace Praktika123
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button18 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -145,6 +145,7 @@ namespace Praktika123
             this.button9.Size = new System.Drawing.Size(20, 20);
             this.button9.TabIndex = 8;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -172,6 +173,7 @@ namespace Praktika123
             this.button12.TabIndex = 11;
             this.button12.Text = "Овал";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -181,6 +183,7 @@ namespace Praktika123
             this.button13.TabIndex = 12;
             this.button13.Text = "Прямоугольник";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -190,6 +193,7 @@ namespace Praktika123
             this.button14.TabIndex = 13;
             this.button14.Text = "Линия";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -199,6 +203,7 @@ namespace Praktika123
             this.button15.TabIndex = 14;
             this.button15.Text = "Ластик";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button16
             // 
@@ -208,6 +213,7 @@ namespace Praktika123
             this.button16.TabIndex = 15;
             this.button16.Text = "Очистка поля";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // menuStrip1
             // 
@@ -232,21 +238,21 @@ namespace Praktika123
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // создатьToolStripMenuItem
             // 
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.создатьToolStripMenuItem.Text = "Создать";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
             // 
@@ -288,6 +294,16 @@ namespace Praktika123
             this.panel1.Size = new System.Drawing.Size(800, 66);
             this.panel1.TabIndex = 18;
             // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(663, 43);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(113, 23);
+            this.button18.TabIndex = 20;
+            this.button18.Text = "Другой цвет";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -305,15 +321,7 @@ namespace Praktika123
             this.button17.TabIndex = 19;
             this.button17.Text = "Заливка поля";
             this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(663, 43);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(113, 23);
-            this.button18.TabIndex = 20;
-            this.button18.Text = "Другой цвет";
-            this.button18.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // pictureBox1
             // 
@@ -323,7 +331,9 @@ namespace Praktika123
             this.pictureBox1.Size = new System.Drawing.Size(800, 360);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // Form1
             // 
