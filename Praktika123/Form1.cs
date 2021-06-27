@@ -18,6 +18,21 @@ namespace Praktika123
         int x1, y1;
         int xclick, yclick;
 
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public Form1()
         {
             mode = "Линия";
