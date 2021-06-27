@@ -20,17 +20,60 @@ namespace Praktika123
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        SaveFileDialog SaveDlg = new SaveFileDialog();
+            SaveDlg.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
+            SaveDlg.Title = "Save an Image File";
+            SaveDlg.FilterIndex = 4;    //По умолчанию будет выбрано последнее расширение*.png
+            SaveDlg.ShowDialog();
 
+            if (SaveDlg.FileName != "")
+            {
+                System.IO.FileStream fs = (System.IO.FileStream)SaveDlg.OpenFile();
+
+                switch (SaveDlg.FilterIndex)
+                {
+                    case 1:
+                        this.pictureBox1.Image.Save(fs, ImageFormat.Jpeg); break;
+
+                    case 2:
+                        this.pictureBox1.Image.Save(fs, ImageFormat.Bmp); break;
+
+                    case 3:
+                        this.pictureBox1.Image.Save(fs, ImageFormat.Gif); break;
+
+                    case 4:
+                        this.pictureBox1.Image.Save(fs, ImageFormat.Png); break;
+                }
+                fs.Close();
+            }
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+         openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName != "")
+            {
+                pic = (Bitmap)Image.FromFile(openFileDialog1.FileName);
+                pictureBox1.Image = pic;
+            }
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+          if (pictureBox1.Image != null)
+            {
+                var result = MessageBox.Show("Сохранить текущее изображение перед созданием нового рисунка?", "Предупреждение", MessageBoxButtons.YesNoCancel);
 
+                switch (result)
+                {
+                    case DialogResult.No: break;
+                    case DialogResult.Yes: СохранитьToolStripMenuItem_Click(sender, e); break;
+                    case DialogResult.Cancel: return;
+                }
+            }
+            pictureBox1.Image = null;
+            pic = new Bitmap(1000, 1000);
+            pic1 = new Bitmap(1000, 1000);
         }
 
         public Form1()
